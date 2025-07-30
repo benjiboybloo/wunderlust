@@ -1,0 +1,260 @@
+/* Base */
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 0 1rem;
+  line-height: 1.5;
+}
+
+a {
+  color: #004a99; /* Blue */
+  text-decoration: none;
+  transition: transform 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover, a:focus {
+  color: #007acc;
+  transform: scale(1.05);
+  outline: none;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: auto;
+  height: auto;
+  background-color: #004a99;
+  color: white;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Container & Layout */
+body > * {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+header img {
+  max-width: 150px;
+  display: block;
+  margin: 0.5rem auto 1rem;
+  transition: transform 0.2s ease;
+}
+
+header img:hover, header img:focus {
+  transform: scale(1.1);
+}
+
+/* Nav */
+nav {
+  margin-bottom: 2rem;
+  border-top: 1px solid #004a99;
+  border-bottom: 1px solid #004a99;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+nav a.active,
+nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 3px;
+}
+
+/* Sections */
+section {
+  margin-bottom: 3rem;
+}
+
+section h2 {
+  color: #004a99;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #004a99;
+  padding-bottom: 0.25rem;
+}
+
+/* Pictures scaling on hover */
+section picture img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.5rem auto;
+  transition: transform 0.3s ease;
+}
+
+section picture img:hover, section picture img:focus {
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Articles inside plan-your-trip and testimonials */
+#plan-your-trip article,
+#testimonials article,
+#about-destination article {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#about-destination {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.destination-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.destination-row article {
+  flex: 1 1 250px;
+  max-width: 300px;
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.destination-row article:hover {
+  transform: scale(1.05);
+}
+
+
+#plan-your-trip svg,
+#testimonials svg,
+#about-destination svg {
+  display: block;
+  margin: 0 auto 1rem;
+  max-width: 150px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+#plan-your-trip svg:hover,
+#testimonials svg:hover,
+#about-destination svg:hover {
+  transform: scale(1.1);
+}
+
+/* Testimonial images */
+#testimonials img {
+  max-width: 120px;
+  border-radius: 50%;
+  display: block;
+  margin: 0.5rem auto 1rem;
+  transition: transform 0.3s ease;
+}
+
+#testimonials img:hover, #testimonials img:focus {
+  transform: scale(1.1);
+  outline: none;
+}
+
+/* Form styles */
+form {
+  background-color: #f7f9fc;
+  padding: 1rem 2rem 2rem;
+  border-radius: 5px;
+  border: 1px solid #004a99;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+form legend {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #004a99;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select {
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #004a99;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+form button {
+  margin-top: 1.5rem;
+  background-color: #004a99;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover, form button:focus {
+  background-color: #007acc;
+  outline: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin: 3rem 0 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
