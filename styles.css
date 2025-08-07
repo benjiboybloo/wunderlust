@@ -1,0 +1,794 @@
+/*Benjamin Posy*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ========================================
+   GOOGLE FONTS IMPORT
+======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Molle:ital@1&family=Montserrat:wght@400;600&display=swap');
+
+/* ========================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+======================================== */
+:root {
+  --yellow: #F6D64A;
+  --teal: #55BCD5;
+  --purple: #9B26B0;
+  --blue: #499BD2;
+  --dark-gray: #222222;
+  --light-gray: #EAEAEA;
+  --white: #FFFFFF;
+  --black: #000000;
+}
+
+/* ========================================
+   ACCESSIBILITY & UTILITY CLASSES
+======================================== */
+/* Screen Reader Only Content */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Skip Link */
+#skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+/* ========================================
+   MOBILE-FIRST BASE STYLES
+======================================== */
+/* Base Styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark-gray);
+  background-color: var(--white);
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Molle', cursive;
+  color: var(--purple);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: var(--dark-gray);
+  margin-bottom: 0.5rem;
+}
+
+p, label, input, select, button, q {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ========================================
+   HEADER & NAVIGATION - MOBILE FIRST
+======================================== */
+/* Header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+#logo img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+/* Navigation */
+nav {
+  width: 100%;
+}
+
+#menu-toggle {
+  width: 100%;
+}
+
+#menu-toggle input[type="checkbox"] {
+  display: none;
+}
+
+#menu-toggle label {
+  display: block;
+  background-color: var(--yellow);
+  color: var(--black);
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#menu-toggle ul {
+  display: none;
+  background-color: var(--teal);
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+#menu-toggle input:checked ~ ul {
+  display: block;
+}
+
+#menu-toggle ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#menu-toggle ul li:last-child {
+  border-bottom: none;
+}
+
+#menu-toggle ul li a {
+  display: block;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 600;
+  padding: 1rem;
+  text-transform: uppercase;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#menu-toggle ul li.active a,
+#menu-toggle ul li a:hover {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+/* ========================================
+   TABLET & DESKTOP RESPONSIVE STYLES
+======================================== */
+/* Responsive nav for wider screens */
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  header div {
+    text-align: center;
+  }
+
+  #menu-toggle label {
+    display: none;
+  }
+
+  #menu-toggle ul {
+    display: flex !important;
+    background-color: transparent;
+    gap: 2rem;
+  }
+
+  #menu-toggle ul li {
+    border-bottom: none;
+  }
+
+  #menu-toggle ul li a {
+    color: var(--dark-gray);
+    background-color: transparent;
+    padding: 0;
+    text-transform: none;
+  }
+
+  #menu-toggle ul li.active a {
+    color: var(--purple);
+    background-color: transparent;
+  }
+
+  #menu-toggle ul li a:hover {
+    color: var(--purple);
+    background-color: transparent;
+  }
+}
+
+/* Main Content */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Intro Section */
+#intro {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#intro h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#intro p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Image Grid */
+#img-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+#img-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  #img-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Plan Your Trip */
+#plan {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#plan > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+#plan section {
+  background-color: var(--teal);
+  color: var(--white);
+  padding: 2rem 1rem;
+  border-radius: 8px;
+}
+
+#plan section h4 {
+  color: var(--white);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+#plan img {
+  width: 80px;
+  height: auto;
+  margin: 1rem 0;
+}
+
+#plan a {
+  color: var(--white);
+}
+
+@media (min-width: 768px) {
+  #plan > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  #plan > div {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Testimonials */
+#testimonials {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#testimonials > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+#testimonials section {
+  background-color: var(--white);
+  border: 2px solid var(--light-gray);
+  padding: 2rem 1rem;
+  border-radius: 8px;
+}
+
+#testimonials img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+#testimonials h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+#testimonials p {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+#testimonials q {
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  #testimonials > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  #testimonials > div {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* About Section */
+#about {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#about > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+#about section {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 2rem 1rem;
+  border-radius: 8px;
+}
+
+#about section h4 {
+  color: var(--yellow);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+#about img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+#about p {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  #about > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  #about > div {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Contact Form */
+#contact {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+#contact h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-required {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--dark-gray);
+}
+
+.required {
+  color: var(--purple);
+  font-weight: bold;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#names,
+#nums,
+#selects {
+  margin-bottom: 2rem;
+}
+
+#names {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  #names {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--purple);
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--yellow);
+}
+
+/* Radio Button Styles */
+fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.radio-input {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.radio-input input[type="radio"] {
+  display: none;
+}
+
+.radio-control {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--purple);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  position: relative;
+}
+
+.radio-input input[type="radio"]:checked + .radio-control::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--purple);
+  border-radius: 50%;
+}
+
+.radio-label {
+  font-weight: 400;
+}
+
+fieldset label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+/* Custom Select Styles */
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.custom-select select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px;
+}
+
+/* Submit Button */
+input[type="submit"] {
+  background-color: var(--purple);
+  color: var(--white);
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--blue);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.875rem;
+  border-top: 2px solid var(--light-gray);
+  margin-top: 3rem;
+}
+
+footer p {
+  margin-bottom: 1rem;
+}
+
+footer a {
+  color: var(--teal);
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Larger Screen Adjustments */
+@media (min-width: 1024px) {
+  body {
+    padding: 2rem;
+  }
+
+  #intro h2 {
+    font-size: 4rem;
+  }
+
+  #intro p {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+}
+/* ===============================
+   ACCESSIBILITY FOCUS + HOVER
+================================= */
+
+/* Focus and hover for links and buttons */
+a:focus,
+a:hover,
+button:focus,
+button:hover,
+input[type="submit"]:focus,
+input[type="submit"]:hover,
+select:focus {
+  outline: 3px solid var(--purple);
+  outline-offset: 3px;
+  background-color: var(--light-gray);
+  transition: all 0.3s ease;
+}
+
+/* Enhance custom select arrows on hover */
+.custom-select select:hover {
+  border-color: var(--blue);
+  cursor: pointer;
+}
+
+/* Radio control focus ring */
+.radio-control:focus-within {
+  outline: 2px solid var(--yellow);
+  outline-offset: 4px;
+}
+
+/* Focus ring for input fields */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 3px rgba(246, 214, 74, 0.4);
+}
+
+/* Navigation link hover styles (mobile + desktop) */
+#menu-toggle ul li a:hover,
+#menu-toggle ul li a:focus {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+/* Footer links */
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+  color: var(--purple);
+}
+
+/* ========================================
+   SMALL SCREENS (320px–480px)
+======================================== */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  #intro h2 {
+    font-size: 2.2rem;
+  }
+
+  #intro p {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  #plan section,
+  #testimonials section,
+  #about section {
+    padding: 1rem;
+  }
+
+  #testimonials img {
+    width: 80px;
+    height: 80px;
+  }
+
+  #about img {
+    width: 40px;
+  }
+
+  label,
+  input,
+  select,
+  button {
+    font-size: 1rem;
+  }
+
+  input[type="submit"] {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
