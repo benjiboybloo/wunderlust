@@ -1,9 +1,6 @@
-/*Benjamin Posy*/
+/* styles.css - Created by Benjamin */
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* Eric Meyer's CSS Reset v2.0 - https://meyerweb.com/eric/tools/css/reset/ */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -685,110 +682,5 @@ footer a:hover {
 
   h3 {
     font-size: 2rem;
-  }
-}
-/* ===============================
-   ACCESSIBILITY FOCUS + HOVER
-================================= */
-
-/* Focus and hover for links and buttons */
-a:focus,
-a:hover,
-button:focus,
-button:hover,
-input[type="submit"]:focus,
-input[type="submit"]:hover,
-select:focus {
-  outline: 3px solid var(--purple);
-  outline-offset: 3px;
-  background-color: var(--light-gray);
-  transition: all 0.3s ease;
-}
-
-/* Enhance custom select arrows on hover */
-.custom-select select:hover {
-  border-color: var(--blue);
-  cursor: pointer;
-}
-
-/* Radio control focus ring */
-.radio-control:focus-within {
-  outline: 2px solid var(--yellow);
-  outline-offset: 4px;
-}
-
-/* Focus ring for input fields */
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus {
-  border-color: var(--yellow);
-  box-shadow: 0 0 0 3px rgba(246, 214, 74, 0.4);
-}
-
-/* Navigation link hover styles (mobile + desktop) */
-#menu-toggle ul li a:hover,
-#menu-toggle ul li a:focus {
-  background-color: var(--yellow);
-  color: var(--black);
-}
-
-/* Footer links */
-footer a:hover,
-footer a:focus {
-  text-decoration: underline;
-  color: var(--purple);
-}
-
-/* ========================================
-   SMALL SCREENS (320px–480px)
-======================================== */
-@media (max-width: 480px) {
-  body {
-    padding: 1rem 0.5rem;
-    font-size: 0.9rem;
-  }
-
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  #intro h2 {
-    font-size: 2.2rem;
-  }
-
-  #intro p {
-    font-size: 1rem;
-    padding: 0 0.5rem;
-  }
-
-  h3 {
-    font-size: 1.3rem;
-  }
-
-  #plan section,
-  #testimonials section,
-  #about section {
-    padding: 1rem;
-  }
-
-  #testimonials img {
-    width: 80px;
-    height: 80px;
-  }
-
-  #about img {
-    width: 40px;
-  }
-
-  label,
-  input,
-  select,
-  button {
-    font-size: 1rem;
-  }
-
-  input[type="submit"] {
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
   }
 }
