@@ -521,11 +521,6 @@ form {
   gap: 1rem;
 }
 
-@media (min-width: 768px) {
-  #names {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
 label {
   display: block;
@@ -682,5 +677,64 @@ footer a:hover {
 
   h3 {
     font-size: 2rem;
+  }
+}
+
+/* === Header Fix for Tablet/Desktop Layout  === */
+@media (min-width: 768px) {
+  header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 1rem;
+    text-align: left;
+  }
+
+  header h1,
+  header p {
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--dark-gray);
+  }
+
+  #menu-toggle label {
+    display: none;
+  }
+
+  #menu-toggle ul {
+    display: flex !important;
+    background-color: transparent;
+    gap: 2rem;
+    position: static;
+  }
+
+  #menu-toggle ul li {
+    border-bottom: none;
+  }
+
+  #menu-toggle ul li a {
+    color: var(--dark-gray);
+    background-color: transparent;
+    padding: 0;
+    text-transform: none;
+  }
+
+  #menu-toggle ul li.active a {
+    color: var(--purple);
+    background-color: transparent;
+  }
+
+  #menu-toggle ul li a:hover {
+    color: var(--purple);
+    background-color: transparent;
   }
 }
